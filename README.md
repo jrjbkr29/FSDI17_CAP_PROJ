@@ -14,6 +14,17 @@ Engineers, managers, and technicians of various ages/technical backgrounds
 - Create a QR code generator page to link to a dataset
 - API to send out job data to different programs
 
+## Architectual Analysis
+![alt text](https://raw.githubusercontent.com/jrjbkr29/FSDI17_CAP_PROJ/47fdd578ce03188b01cb42248cc5f2358b0ec674/UX/Arch_Analy.png)
+
+### Architectual Style System Categories
+1. set of compoenets organized and assembled
+2. set of connectors(messaging and APIs, how they communicate with each other)
+3. Qualitiy Attributes/Constraints
+4. Semantic models
+## UML Design Patterns
+
+
 ## User Models
 ### Engineers(requesters): 
 - Create new requests to get product tested through the lab.

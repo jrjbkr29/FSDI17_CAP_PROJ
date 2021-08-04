@@ -15,7 +15,7 @@ Engineers, managers, and technicians of various ages/technical backgrounds
 - API to send out job data to different programs
 
 ## Architectual Analysis
-![alt text](https://raw.githubusercontent.com/jrjbkr29/FSDI17_CAP_PROJ/47fdd578ce03188b01cb42248cc5f2358b0ec674/UX/Arch_Analy.png)
+![alt text](https://raw.githubusercontent.com/jrjbkr29/FSDI17_CAP_PROJ/47fdd578ce03188b01cb42248cc5f2358b0ec674/UX/Arch_Anal.png)
 
 ### Architectual Style System Categories
 1. set of compoenets organized and assembled

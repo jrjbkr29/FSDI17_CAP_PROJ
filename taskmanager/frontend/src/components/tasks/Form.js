@@ -107,7 +107,7 @@ export class Form extends Component {
             </button>
           </div>
         </form>
-      </div>
+    </div>
     );
   }
 }

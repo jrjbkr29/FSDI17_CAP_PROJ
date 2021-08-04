@@ -15,15 +15,23 @@ Engineers, managers, and technicians of various ages/technical backgrounds
 - API to send out job data to different programs
 
 ## Architectual Analysis
+Rest framework with Django and React Front End.
 ![alt text](https://raw.githubusercontent.com/jrjbkr29/FSDI17_CAP_PROJ/main/UX/Arch_Anal.png)
 
 ### Architectual Style System Categories
-1. set of compoenets organized and assembled
-2. set of connectors(messaging and APIs, how they communicate with each other)
+1. Set of compoenets organized and assembled
+2. Set of connectors(messaging and APIs, how they communicate with each other)
 3. Qualitiy Attributes/Constraints
 4. Semantic models
-## UML Design Patterns
-
+### Classes
+1. Task Class:
+- Creates task objects
+- Takes in parameters from UI Form Fields
+- No methods attached
+2. FAQ Class:
+- Creates objects to hold questions and answers
+- Takes in a title and answer input from the admin panel
+- No methods attached
 
 ## User Models
 ### Engineers(requesters): 

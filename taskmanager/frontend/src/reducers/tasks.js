@@ -1,7 +1,6 @@
 import { GET_TASKS, DELETE_TASK, ADD_TASK } from '../actions/types.js';
 
 const initialState = {
-    something: 'text',
     tasks: []
 }
 
@@ -23,6 +22,7 @@ export default function(state = initialState, action) {
                 ...state,
                 tasks: [...state.tasks, action.payload]
             };
+        
         default:
             return state;
     }

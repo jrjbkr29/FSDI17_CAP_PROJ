@@ -38,7 +38,8 @@ export class Form extends Component {
   render() {
     const { job_type, work_order, serial_num, part_num, email, details } = this.state;
     return (
-      <div className="card card-body mt-4 mb-4">
+      
+      <div id="collapseExample" className="collapse  card card-body mt-4 mb-4 form">
         <h2>Add Task</h2>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">

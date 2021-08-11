@@ -1,13 +1,18 @@
 import React, { Fragment } from 'react';
 import Form from './Form.js';
-import Tasks from './Tasks.js';
+
 import { FAQ } from './FAQ';
 
 export default function Dashboard() {
     return (
         <Fragment>
-            <Form />
-            <FAQ />
+            <div className="center">
+                <button className="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Create New Request
+                </button>
+                <Form></Form>
+                <FAQ></FAQ>
+            </div>
         </Fragment>
     )
 }

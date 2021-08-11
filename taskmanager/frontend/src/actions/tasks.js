@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_TASKS, DELETE_TASK, ADD_TASK } from './types';
+import { GET_TASKS, DELETE_TASK, ADD_TASK} from './types';
 
 // GET TASKS
 export const getTasks = () => dispatch => {

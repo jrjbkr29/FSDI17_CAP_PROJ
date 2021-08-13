@@ -1,7 +1,10 @@
-import { GET_TASKS, DELETE_TASK, ADD_TASK } from '../actions/types.js';
+import { GET_TASKS, DELETE_TASK, ADD_TASK, GET_FAQ, GET_EMP, GET_RES} from '../actions/types.js';
 
 const initialState = {
-    tasks: []
+    tasks: [],
+    FAQ: [],
+    resources: [],
+    employees: []
 }
 
 export default function(state = initialState, action) {
@@ -22,7 +25,26 @@ export default function(state = initialState, action) {
                 ...state,
                 tasks: [...state.tasks, action.payload]
             };
-        
+
+        case GET_FAQ:
+            return {
+                ...state,
+                FAQ: [...state.FAQ, action.payload]
+            };
+
+        case GET_RES:
+            return {
+                ...state,
+                resources: [...state.resources, action.payload]
+            };
+            
+        case GET_EMP:
+            return {
+                ...state,
+                employees: [...state.employees, action.payload]
+            };
+
+
         default:
             return state;
     }

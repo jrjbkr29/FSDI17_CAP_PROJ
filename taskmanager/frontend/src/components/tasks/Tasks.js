@@ -1,17 +1,24 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getTasks, deleteTask } from '../../actions/tasks';
+import { getTasks, deleteTask, getFaq, getRes, getEmp } from '../../actions/tasks';
+import RecipeReviewCard from '../layout/resource';
 
 export class Tasks extends Component {
     static propTypes = {
         tasks: PropTypes.array.isRequired,
         getTasks: PropTypes.func.isRequired,
+        getFaq: PropTypes.func.isRequired,
+        getRes: PropTypes.func.isRequired,
+        getEmp: PropTypes.func.isRequired,
         deleteTask: PropTypes.func.isRequired
     };
 
     componentDidMount() {
-        this.props.getTasks();
+        this.props.getTasks(),
+        this.props.getFaq(),
+        this.props.getEmp(),
+        this.props.getRes();
     }
     render() {
         return (
@@ -45,6 +52,7 @@ export class Tasks extends Component {
                             )) }
                         </tbody>
                 </table>
+                <RecipeReviewCard></RecipeReviewCard>
             </Fragment>
         )
     }
@@ -54,4 +62,4 @@ const mapStateToProps = state => ({
     tasks: state.tasks.tasks
 })
 
-export default connect(mapStateToProps, { getTasks, deleteTask })(Tasks);
+export default connect(mapStateToProps, { getTasks, deleteTask, getFaq, getRes, getEmp })(Tasks);

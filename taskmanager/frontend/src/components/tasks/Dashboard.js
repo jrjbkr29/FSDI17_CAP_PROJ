@@ -11,7 +11,7 @@ export default function Dashboard() {
                     Create New Request
                 </button>
                 <Form></Form>
-                <FAQ></FAQ>
+                 
             </div>
         </Fragment>
     )

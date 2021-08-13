@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { addTask } from '../../actions/tasks'
+import { addTask, get } from '../../actions/tasks'
 
 export class Form extends Component {
     state = {
@@ -10,7 +10,11 @@ export class Form extends Component {
         serial_num: '',
         part_num: '',
         email: '',
+        environment: '',
         details: '',
+        status: '',
+        assignedTo: '',
+        resource: ''
     }
 
 
@@ -22,27 +26,32 @@ export class Form extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    const { job_type, work_order, serial_num, part_num, email, details } = this.state;
-    const task = { job_type, work_order, serial_num, part_num, email, details };
+    const { job_type, work_order, serial_num, part_num, email, environment, details, status, assignedTo, resource } = this.state;
+    const task = { job_type, work_order, serial_num, part_num, email, environment, details, status, assignedTo, resource };
     this.props.addTask(task);
     this.setState({
         job_type: '', 
         work_order: '', 
         serial_num: '', 
         part_num: '', 
-        email: '', 
-        details: ''
+        email: '',
+        environment: '', 
+        details: '',
+        status: '',
+        assignedTo: '',
+        resource: ''
     });
   };
 
   render() {
-    const { job_type, work_order, serial_num, part_num, email, details } = this.state;
+    const { job_type, work_order, serial_num, part_num, email, environment, details } = this.state;
     return (
       
       <div id="collapseExample" className="collapse  card card-body mt-4 mb-4 form">
         <h2>Add Task</h2>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
+            {/* 
             <label>Job Type</label>
             <input
               className="form-control"
@@ -51,6 +60,27 @@ export class Form extends Component {
               onChange={this.onChange}
               value={job_type}
             />
+            */}
+              <label htmlFor="inputType">Type</label>
+              <select name="job_type" value="{job_type" id="inputType" className="form-control" onChange={this.onChange}
+              value={job_type}>
+                <option defaultValue>Select: ATP/QTP/DEV</option>
+                <option>ATP</option>
+                <option>QTP</option>
+                <option>DEV</option>
+                <option>N/A</option>
+              </select>
+          </div>
+          <div className="form-group">
+              <label htmlFor="inputType">Type</label>
+              <select name="environment" value="{environment" id="inputType" className="form-control" onChange={this.onChange}
+              value={environment}>
+                <option defaultValue>Select: Vibe/Thermal/Shock</option>
+                <option>Vibe</option>
+                <option>Thermal</option>
+                <option>Shock</option>
+                <option>N/A</option>
+              </select>
           </div>
           <div className="form-group">
             <label>Work Order</label>

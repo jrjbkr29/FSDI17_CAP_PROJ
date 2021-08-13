@@ -4,6 +4,5 @@ import faqs from './faq';
 
 
 export default combineReducers({
-    tasks,
-    faqs
+    tasks
 });

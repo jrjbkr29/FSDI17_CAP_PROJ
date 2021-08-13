@@ -1,21 +1,21 @@
 import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import  { getFaqs }  from "../../actions/FAQ";
+import  { getFaq }  from "../../actions/tasks";
 
 export class FAQ extends Component {
   static propTypes = {
-    faqs: PropTypes.array.isRequired,
-    getFaqs: PropTypes.func.isRequired
+    faq: PropTypes.array.isRequired,
+    getFaq: PropTypes.func.isRequired
   };
 
-  componentDidMount() {
-    this.props.getFaqs();
+  componentWillMount() {
+    this.props.getFaq();
 }
 
   render() {
     return (
-      
+      <Fragment>
           <div id="carouselExampleIndicators" className="carousel slide carusel-image" data-ride="carousel">
             <ol className="carousel-indicators">
               <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
@@ -56,13 +56,13 @@ export class FAQ extends Component {
             <span className="sr-only">Next</span>
           </a>
         </div>
-      
+        </Fragment>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  faqs: state.faqs.faqs
+  faq: state.faq.faq
 })
 
-export default connect(mapStateToProps, getFaqs )(FAQ);
+export default connect(mapStateToProps, getFaq )(FAQ);

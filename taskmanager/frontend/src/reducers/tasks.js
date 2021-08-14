@@ -29,19 +29,19 @@ export default function(state = initialState, action) {
         case GET_FAQ:
             return {
                 ...state,
-                FAQ: [...state.FAQ, action.payload]
+                FAQ: action.payload
             };
 
         case GET_RES:
             return {
                 ...state,
-                resources: [...state.resources, action.payload]
+                resources: action.payload
             };
             
         case GET_EMP:
             return {
                 ...state,
-                employees: [...state.employees, action.payload]
+                employees: action.payload
             };
 
 

@@ -54,6 +54,7 @@ class FAQ(models.Model):
 class Employees(models.Model):
     employee = models.CharField(max_length=30, blank=False, unique=True)
     emp_image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100)
+    task_history = models.CharField(max_length=50, default='none')
 
 res_stat_CHOICES = (
     ('prod', 'PRODUCTION'),
@@ -62,6 +63,7 @@ res_stat_CHOICES = (
     ('down', 'Resource-Down')
 )
 class Resources(models.Model):
-    resource = models.CharField(max_length=25, blank=False, unique=True)
+    resource_name = models.CharField(max_length=25, blank=False, unique=True)
     status = models.CharField(max_length=25, choices=res_stat_CHOICES, default='prod')
+    assigned_tasks = models.CharField(max_length=50, blank=True, unique=False)
     res_image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100)

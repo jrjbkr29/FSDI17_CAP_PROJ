@@ -7,6 +7,7 @@ import RecipeReviewCard from '../layout/resource';
 export class Tasks extends Component {
     static propTypes = {
         tasks: PropTypes.array.isRequired,
+        resources: PropTypes.array.isRequired,
         getTasks: PropTypes.func.isRequired,
         getFaq: PropTypes.func.isRequired,
         getRes: PropTypes.func.isRequired,
@@ -21,9 +22,11 @@ export class Tasks extends Component {
         this.props.getRes();
     }
     render() {
+        let resources = this.props.resources
         return (
             <Fragment>
                 <h2>Tasks</h2>
+                {/*
                 <table className="table table-striped">
                     <thead>
                         <tr>
@@ -52,14 +55,20 @@ export class Tasks extends Component {
                             )) }
                         </tbody>
                 </table>
-                <RecipeReviewCard></RecipeReviewCard>
+                 */}
+                <div className="container">
+                    <div className="row">
+                    {resources.map((resource) => <RecipeReviewCard key={resource.id} resource_name={resource.resource_name} status={resource.status} keyId={resource.id}  />)}
+                    </div>
+                </div>
             </Fragment>
         )
     }
 }
 
 const mapStateToProps = state => ({
-    tasks: state.tasks.tasks
+    tasks: state.tasks.tasks,
+    resources: state.tasks.resources
 })
 
 export default connect(mapStateToProps, { getTasks, deleteTask, getFaq, getRes, getEmp })(Tasks);

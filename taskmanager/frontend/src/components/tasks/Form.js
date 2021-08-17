@@ -12,9 +12,9 @@ export class Form extends Component {
         email: '',
         environment: '',
         details: '',
-        status: '',
-        assignedTo: '',
-        resource: ''
+        status: 'new',
+        assignedTo: 'none',
+        resource: 'none'
     }
 
 
@@ -37,14 +37,14 @@ export class Form extends Component {
         email: '',
         environment: '', 
         details: '',
-        status: '',
+        status: 'new',
         assignedTo: '',
         resource: ''
     });
   };
 
   render() {
-    const { job_type, work_order, serial_num, part_num, email, environment, details } = this.state;
+    const { job_type, work_order, serial_num, part_num, email, environment, details, status, assignedTo, resource } = this.state;
     return (
       
       <div id="collapseExample" className="collapse  card card-body mt-4 mb-4 form">
@@ -62,24 +62,24 @@ export class Form extends Component {
             />
             */}
               <label htmlFor="inputType">Type</label>
-              <select name="job_type" value="{job_type" id="inputType" className="form-control" onChange={this.onChange}
+              <select name="job_type" id="inputType" className="form-control" onChange={this.onChange}
               value={job_type}>
                 <option defaultValue>Select: ATP/QTP/DEV</option>
-                <option>ATP</option>
-                <option>QTP</option>
-                <option>DEV</option>
-                <option>N/A</option>
+                <option value="atp">ATP</option>
+                <option value="qtp">QTP</option>
+                <option value="dev">DEV</option>
+                <option value="n/a">N/A</option>
               </select>
           </div>
           <div className="form-group">
               <label htmlFor="inputType">Type</label>
-              <select name="environment" value="{environment" id="inputType" className="form-control" onChange={this.onChange}
+              <select name="environment" id="environmentInputType" className="form-control" onChange={this.onChange}
               value={environment}>
                 <option defaultValue>Select: Vibe/Thermal/Shock</option>
-                <option>Vibe</option>
-                <option>Thermal</option>
-                <option>Shock</option>
-                <option>N/A</option>
+                <option value="vibe">Vibe</option>
+                <option value="thermal">Thermal</option>
+                <option value="shock">Shock</option>
+                <option value="none">N/A</option>
               </select>
           </div>
           <div className="form-group">
@@ -132,8 +132,34 @@ export class Form extends Component {
               value={details}
             />
           </div>
+          <div>
+          <select hidden name="status" id="statusInputType" className="form-control" readOnly
+              value={status}>
+                <option defaultValue="new">new</option>
+              </select>
+          </div>
           <div className="form-group">
-            <button type="submit" className="btn btn-primary">
+            
+            <textarea hidden
+              className="form-control"
+              type="text"
+              name="assignedTo"
+              onChange={this.onChange}
+              value={assignedTo}
+            />
+          </div>
+          <div className="form-group">
+            
+            <textarea hidden
+              className="form-control"
+              type="text"
+              name="resource"
+              onChange={this.onChange}
+              value={resource}
+            />
+          </div>
+          <div className="form-group">
+            <button type="submit"  className="btn btn-primary">
               Submit
             </button>
           </div>
